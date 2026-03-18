@@ -1,1 +1,1 @@
-[Мои интсрументы →](https://volkovhl.github.io)
+[Дела Моей Техники](https://volkovhl.github.io)
