@@ -4,11 +4,91 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Дела Техники — Pavel Volkov</title>
 
-    <!-- AOS для анимаций появления (очень лёгкая библиотека) -->
+    <!-- === SEO Meta === -->
+    <title>Дела Техники — Pavel Volkov | Инженерные проекты, ЧПУ, 3D, генераторы кода</title>
+    <meta name="description"
+        content="Инженерные и технические проекты Павла Волкова: генераторы G-кода, симуляторы, калькуляторы, визуализаторы для ЧПУ, 3D-печати и электроники." />
+    <meta name="keywords"
+        content="Pavel Volkov, Дела Техники, ЧПУ, G-код, генератор, симулятор, калькулятор, инженерные проекты, 3D, CNC, лазер, осциллограф" />
+    <link rel="canonical" href="https://volkovhl.github.io/volkovhl.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://volkovhl.github.io/volkovhl.html" />
+    <meta property="og:title" content="Дела Техники — Pavel Volkov" />
+    <meta property="og:description"
+        content="Инженерные проекты: генераторы G-кода, симуляторы, калькуляторы для ЧПУ и 3D-печати." />
+    <meta property="og:image" content="https://github.com/volkovhl/volkovhl.github.io/raw/main/DT.webp" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://volkovhl.github.io/volkovhl.html" />
+    <meta property="twitter:title" content="Дела Техники — Pavel Volkov" />
+    <meta property="twitter:description"
+        content="Инженерные проекты: генераторы G-кода, симуляторы, калькуляторы для ЧПУ и 3D-печати." />
+    <meta property="twitter:image" content="https://github.com/volkovhl/volkovhl.github.io/raw/main/DT.webp" />
+
+    <!-- JSON-LD: Person + Website + CollectionPage -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Pavel Volkov",
+            "url": "https://volkovhl.github.io/volkovhl.html",
+            "sameAs": [
+                "https://www.youtube.com/@Pavel_Volkov",
+                "https://github.com/volkovhl"
+            ],
+            "jobTitle": "Инженер-разработчик",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Дела Техники"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://volkovhl.github.io/volkovhl.html",
+            "name": "Дела Техники — Pavel Volkov",
+            "description": "Инженерные и технические проекты: генераторы G-кода, симуляторы, калькуляторы для ЧПУ, 3D-печати и электроники.",
+            "author": {
+                "@type": "Person",
+                "name": "Pavel Volkov"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Проекты Дела Техники",
+            "description": "Коллекция инженерных инструментов и симуляторов",
+            "url": "https://volkovhl.github.io/volkovhl.html",
+            "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Тетрис HTML" },
+                    { "@type": "ListItem", "position": 2, "name": "Rubik's Simulator" },
+                    { "@type": "ListItem", "position": 3, "name": "Калькулятор клинка" },
+                    { "@type": "ListItem", "position": 4, "name": "Визуализатор подачи" },
+                    { "@type": "ListItem", "position": 5, "name": "G-code Generator" },
+                    { "@type": "ListItem", "position": 6, "name": "Калькулятор конуса шкива" },
+                    { "@type": "ListItem", "position": 7, "name": "Развёртка цилиндра + Литраж" },
+                    { "@type": "ListItem", "position": 8, "name": "Генератор шелчков" },
+                    { "@type": "ListItem", "position": 9, "name": "Генератор синусоидального звука" },
+                    { "@type": "ListItem", "position": 10, "name": "XY Figure Generator" }
+                ]
+            }
+        }
+    </script>
+
+    <!-- AOS для анимаций появления -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
 
     <style>
         :root {
@@ -35,8 +115,9 @@
 
         header {
             position: relative;
-            height: 60vh;
-            min-height: 500px;
+            height: 48vh;
+            min-height: 380px;
+            max-height: 520px;
             background: linear-gradient(to bottom, #000000, var(--bg));
             overflow: hidden;
         }
@@ -64,48 +145,40 @@
         }
 
         .avatar {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 4px solid var(--accent);
-            box-shadow: 0 0 30px rgba(0, 234, 255, 0.4);
-            margin-bottom: 1.5rem;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 24px rgba(0, 234, 255, 0.35);
+            margin-bottom: 1.1rem;
         }
 
         h1 {
-            font-size: 3.8rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
             background: linear-gradient(90deg, #fff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .tagline {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .skills {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0 2rem;
+            margin-bottom: 1.2rem;
         }
 
         .youtube-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 2rem;
+            gap: 0.65rem;
+            padding: 0.8rem 1.6rem;
             background: var(--youtube);
             color: white;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
         }
@@ -116,27 +189,270 @@
             box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
         }
 
+        /* ===== КАРУСЕЛЬ — КОМПАКТНАЯ ПРОФЕССИОНАЛЬНАЯ ===== */
+        .carousel-section {
+            padding: 1.2rem 1rem 0.4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .carousel-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .carousel-title span {
+            background: var(--accent);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: var(--card);
+            border: 1px solid #222;
+            box-shadow: var(--shadow);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            min-height: 110px;
+            height: 110px;
+        }
+
+        .carousel-slide img {
+            width: 140px;
+            min-width: 140px;
+            height: 110px;
+            object-fit: cover;
+            border-right: 1px solid #2a2a40;
+        }
+
+        .carousel-slide-content {
+            padding: 0.6rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .carousel-slide-content h2 {
+            font-size: 1rem;
+            color: white;
+            margin-bottom: 0.15rem;
+            line-height: 1.25;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .carousel-slide-content p {
+            font-size: 0.75rem;
+            opacity: 0.75;
+            margin-bottom: 0.4rem;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .carousel-slide-content .btn-group {
+            display: flex;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+        }
+
+        .carousel-btn {
+            padding: 0.28rem 0.9rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.72rem;
+            letter-spacing: 0.2px;
+        }
+
+        .carousel-btn.primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .carousel-btn.primary:hover {
+            background: #00c3e6;
+        }
+
+        .carousel-btn.secondary {
+            background: #2a2a40;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        .carousel-btn.secondary:hover {
+            background: #35354f;
+        }
+
+        .carousel-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.45rem 0 0.15rem;
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .carousel-controls button {
+            background: #1e1e30;
+            border: 1px solid #333;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .carousel-controls button:hover {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.35rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #2a2a40;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .carousel-dots span.active {
+            background: var(--accent);
+            width: 18px;
+            border-radius: 20px;
+        }
+
+        /* ===== ПОИСК ===== */
         main {
-            padding: 5rem 1rem 4rem;
+            padding: 1.5rem 1rem 4rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
+        .search-wrap {
+            position: relative;
+            max-width: 520px;
+            margin: 0 auto 2rem;
+        }
+
         #search {
             width: 100%;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            padding: 1.2rem 2rem;
-            font-size: 1.2rem;
+            padding: 0.85rem 2.8rem 0.85rem 1.3rem;
+            font-size: 1rem;
             background: #1e1e30;
             border: 1px solid #333;
-            border-radius: 60px;
+            border-radius: 50px;
             color: white;
             outline: none;
+            transition: 0.25s;
+        }
+
+        #search:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 234, 255, 0.12);
         }
 
         #search::placeholder {
             color: #777;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            pointer-events: none;
+            font-size: 1.05rem;
+            transition: 0.2s;
+        }
+
+        #search:focus+.search-icon {
+            color: var(--accent);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 2.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: none;
+            padding: 0.2rem;
+            line-height: 1;
+        }
+
+        .search-clear:hover {
+            color: var(--accent);
+        }
+
+        .search-clear.visible {
+            display: block;
+        }
+
+        .search-meta {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            margin: -1.2rem auto 1.6rem;
+            min-height: 1.2em;
+        }
+
+        .search-meta strong {
+            color: var(--accent);
         }
 
         .projects-grid {
@@ -226,7 +542,12 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.6rem;
+            }
+
+            header {
+                height: 50vh;
+                min-height: 380px;
             }
 
             .projects-grid {
@@ -234,8 +555,68 @@
             }
 
             .avatar {
-                width: 120px;
-                height: 120px;
+                width: 110px;
+                height: 110px;
+            }
+
+            .carousel-section {
+                padding: 1rem 0.75rem 0.3rem;
+            }
+
+            .carousel-slide {
+                height: 96px;
+                min-height: 96px;
+            }
+
+            .carousel-slide img {
+                width: 96px;
+                min-width: 96px;
+                height: 96px;
+            }
+
+            .carousel-slide-content {
+                padding: 0.45rem 0.75rem;
+            }
+
+            .carousel-slide-content h2 {
+                font-size: 0.9rem;
+            }
+
+            .carousel-slide-content p {
+                font-size: 0.68rem;
+                -webkit-line-clamp: 2;
+                margin-bottom: 0.3rem;
+            }
+
+            .carousel-btn {
+                padding: 0.22rem 0.7rem;
+                font-size: 0.68rem;
+            }
+
+            #search {
+                font-size: 0.95rem;
+                padding: 0.8rem 2.6rem 0.8rem 1.1rem;
+            }
+
+            .search-wrap {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-slide-content p {
+                display: none;
+            }
+
+            .carousel-slide {
+                height: 80px;
+                min-height: 80px;
+            }
+
+            .carousel-slide img {
+                width: 80px;
+                min-width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -244,192 +625,232 @@
 <body>
 
     <header>
-        <img src="https://github.com/volkovhl/volkovhl.github.io/raw/main/DT.webp" alt="Дела Техники" class="banner">
+        <img src="https://github.com/volkovhl/volkovhl.github.io/raw/main/DT.webp" alt="Дела Техники — баннер"
+            class="banner">
         <div class="hero-content">
-            <img src="https://github.com/volkovhl/volkovhl.github.io/raw/main/channelsDT.webp" alt="Pavel Volkov"
-                class="avatar">
+            <img src="https://github.com/volkovhl/volkovhl.github.io/raw/main/channelsDT.webp"
+                alt="Pavel Volkov — аватар" class="avatar">
             <h1>Дела Техники</h1>
-            <p class="tagline"></p>
-            <a href="https://www.youtube.com/@Pavel_Volkov" class="youtube-btn" target="_blank">
+            <p class="tagline">Инженерные инструменты &amp; симуляторы</p>
+            <a href="https://www.youtube.com/@Pavel_Volkov" class="youtube-btn" target="_blank"
+                rel="noopener noreferrer">
                 YouTube
             </a>
         </div>
     </header>
 
-    <main>
-        <input type="search" id="search" placeholder="Найти проект..." autocomplete="off">
+    <!-- ===== КАРУСЕЛЬ — КОМПАКТНАЯ ===== -->
+    <section class="carousel-section" data-aos="fade-up" data-aos-delay="50" aria-label="Проекты">
+        <div class="carousel-title">
+            <span></span> Проекты
+        </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Слайды вставляются JS -->
+            </div>
+        </div>
+        <div class="carousel-nav">
+            <div class="carousel-controls">
+                <button id="prevSlide" aria-label="Назад">‹</button>
+                <button id="nextSlide" aria-label="Вперёд">›</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots" role="tablist"></div>
+        </div>
+    </section>
 
-        <div class="projects-grid" id="projects">
+    <main>
+        <div class="search-wrap">
+            <input type="search" id="search" placeholder="Поиск по названию или описанию..." autocomplete="off"
+                aria-label="Поиск проектов" enterkeyhint="search">
+            <button type="button" class="search-clear" id="searchClear" aria-label="Очистить поиск">×</button>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+        </div>
+        <div class="search-meta" id="searchMeta"></div>
+
+        <div class="projects-grid" id="projects" itemscope itemtype="https://schema.org/ItemList">
             <!-- Тетрис -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://github.com/volkovhl/Tetris-html/raw/main/Tetris-PC%20.webp" alt="Tetris">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
+                <img src="https://github.com/volkovhl/Tetris-html/raw/main/Tetris-PC%20.webp" alt="Тетрис HTML"
+                    loading="lazy">
                 <div class="project-info">
-                    <h2>Тетрис HTML</h2>
-                    <p>Классика с сенсорным drag & drop, динамической скоростью и неоновым дизайном. Полностью
-                        браузерный.</p>
+                    <h2 itemprop="name">Тетрис HTML</h2>
+                    <p itemprop="description">Классика с сенсорным drag &amp; drop, динамической скоростью и неоновым
+                        дизайном. Полностью браузерный.</p>
                     <div class="card-buttons">
-                        <a href="https://volkovhl.github.io/Tetris-html/" class="btn btn-primary"
-                            target="_blank">Играть</a>
-                        <a href="https://github.com/volkovhl/Tetris-html" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                        <a href="https://volkovhl.github.io/Tetris-html/" class="btn btn-primary" target="_blank"
+                            rel="noopener">Играть</a>
+                        <a href="https://github.com/volkovhl/Tetris-html" class="btn btn-secondary" target="_blank"
+                            rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- Rubik -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://github.com/volkovhl/Rubik-s-Simulator/raw/main/Rubik's.webp" alt="Rubik">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
+                <img src="https://github.com/volkovhl/Rubik-s-Simulator/raw/main/Rubik's.webp" alt="Rubik's Simulator"
+                    loading="lazy">
                 <div class="project-info">
-                    <h2>Rubik's Simulator</h2>
-                    <p>3D-кубик Рубика в браузере. Полные алгоритмы CFOP, drag-повороты, адаптивный дизайн.</p>
+                    <h2 itemprop="name">Rubik's Simulator</h2>
+                    <p itemprop="description">3D-кубик Рубика в браузере. Полные алгоритмы CFOP, drag-повороты,
+                        адаптивный дизайн.</p>
                     <div class="card-buttons">
-                        <a href="https://volkovhl.github.io/Rubik-s-Simulator/" class="btn btn-primary"
-                            target="_blank">Запустить</a>
+                        <a href="https://volkovhl.github.io/Rubik-s-Simulator/" class="btn btn-primary" target="_blank"
+                            rel="noopener">Запустить</a>
                         <a href="https://github.com/volkovhl/Rubik-s-Simulator" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                            target="_blank" rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- Knife -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                <img src="https://github.com/volkovhl/knife-calculator/raw/main/Knife%20PC.webp" alt="Knife Calculator">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
+                <img src="https://github.com/volkovhl/knife-calculator/raw/main/Knife%20PC.webp"
+                    alt="Калькулятор клинка" loading="lazy">
                 <div class="project-info">
-                    <h2>Калькулятор клинка</h2>
-                    <p>Расчёт углов спусков и подводов, реал-тайм визуализация профиля. Для всех типов ножей.</p>
+                    <h2 itemprop="name">Калькулятор клинка</h2>
+                    <p itemprop="description">Расчёт углов спусков и подводов, реал-тайм визуализация профиля. Для всех
+                        типов ножей.</p>
                     <div class="card-buttons">
-                        <a href="https://volkovhl.github.io/knife-calculator/" class="btn btn-primary"
-                            target="_blank">Открыть</a>
-                        <a href="https://github.com/volkovhl/knife-calculator" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                        <a href="https://volkovhl.github.io/knife-calculator/" class="btn btn-primary" target="_blank"
+                            rel="noopener">Открыть</a>
+                        <a href="https://github.com/volkovhl/knife-calculator" class="btn btn-secondary" target="_blank"
+                            rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- Feed Rate -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
                 <img src="https://github.com/volkovhl/Feed-Rate-Visualizer/raw/main/Feed-Rate-Visualizer.webp"
-                    alt="Feed Rate">
+                    alt="Визуализатор подачи" loading="lazy">
                 <div class="project-info">
-                    <h2>Визуализатор подачи</h2>
-                    <p>Анимированная линейка для понимания скоростей ЧПУ (мм/сек vs мм/мин). Практично и наглядно.</p>
+                    <h2 itemprop="name">Визуализатор подачи</h2>
+                    <p itemprop="description">Анимированная линейка для понимания скоростей ЧПУ (мм/сек vs мм/мин).
+                        Практично и наглядно.</p>
                     <div class="card-buttons">
                         <a href="https://volkovhl.github.io/Feed-Rate-Visualizer/" class="btn btn-primary"
-                            target="_blank">Запустить</a>
+                            target="_blank" rel="noopener">Запустить</a>
                         <a href="https://github.com/volkovhl/Feed-Rate-Visualizer" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                            target="_blank" rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- G-code Generator -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
                 <img src="https://github.com/volkovhl/G-Code-Generator/raw/main/G-code-Generator.webp"
-                    alt="G-code Generator">
+                    alt="G-code Generator" loading="lazy">
                 <div class="project-info">
-                    <h2>G-code Generator</h2>
-                    <p>Мощный генератор G-кода для CNC 3018. Контур, рамка, окно, лазерный режим и сверление с учётом
-                        диаметра фрезы.</p>
+                    <h2 itemprop="name">G-code Generator</h2>
+                    <p itemprop="description">Мощный генератор G-кода для CNC 3018. Контур, рамка, окно, лазерный режим
+                        и сверление с учётом диаметра фрезы.</p>
                     <div class="card-buttons">
-                        <a href="https://volkovhl.github.io/G-Code-Generator/" class="btn btn-primary"
-                            target="_blank">Запустить</a>
-                        <a href="https://github.com/volkovhl/G-Code-Generator" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                        <a href="https://volkovhl.github.io/G-Code-Generator/" class="btn btn-primary" target="_blank"
+                            rel="noopener">Запустить</a>
+                        <a href="https://github.com/volkovhl/G-Code-Generator" class="btn btn-secondary" target="_blank"
+                            rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Taper Pulley Calc  -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <!-- Taper Pulley Calc -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
                 <img src="https://github.com/volkovhl/TaperPulley-Calc/raw/main/TaperPulley-Calc.webp?raw=true"
-                    alt="Калькулятор конуса шкива">
+                    alt="Калькулятор конуса шкива" loading="lazy">
                 <div class="project-info">
-                    <h2>Калькулятор конуса шкива</h2>
-                    <p>Расчёт угла наклона образующей посадочного конуса шкива с округлением до 2′ (под угломер
-                        Семенова).
-                        Удобная визуализация и мгновенные результаты.</p>
+                    <h2 itemprop="name">Калькулятор конуса шкива</h2>
+                    <p itemprop="description">Расчёт угла наклона образующей посадочного конуса шкива с округлением до
+                        2′ (под угломер Семенова). Удобная визуализация и мгновенные результаты.</p>
                     <div class="card-buttons">
-                        <a href="https://volkovhl.github.io/TaperPulley-Calc/" class="btn btn-primary"
-                            target="_blank">Открыть</a>
-                        <a href="https://github.com/volkovhl/TaperPulley-Calc" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                        <a href="https://volkovhl.github.io/TaperPulley-Calc/" class="btn btn-primary" target="_blank"
+                            rel="noopener">Открыть</a>
+                        <a href="https://github.com/volkovhl/TaperPulley-Calc" class="btn btn-secondary" target="_blank"
+                            rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Cylinder-Blank-Length-Calculator  -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <!-- Cylinder-Blank-Length-Calculator -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
                 <img src="https://github.com/volkovhl/Cylinder-Blank-Length-Calculator/raw/main/Cylinder%20Blank%20Length%20Calculator.webp?raw=true"
-                    alt="Калькулятор развёртки цилиндра и литража">
+                    alt="Развёртка цилиндра и литраж" loading="lazy">
                 <div class="project-info">
-                    <h2>📐 Развёртка цилиндра + 📦 Литраж</h2>
-                    <p>Расчёт длины прямоугольной заготовки (развёртки) для гибки цилиндра по наружному или внутреннему
-                        диаметру.
-                        Автоматическое вычисление внутреннего объёма (литража) в реальном времени. Удобно для
-                        жестянщиков и инженеров.</p>
+                    <h2 itemprop="name">📐 Развёртка цилиндра + 📦 Литраж</h2>
+                    <p itemprop="description">Расчёт длины прямоугольной заготовки (развёртки) для гибки цилиндра по
+                        наружному или внутреннему диаметру. Автоматическое вычисление внутреннего объёма (литража) в
+                        реальном времени.</p>
                     <div class="card-buttons">
                         <a href="https://volkovhl.github.io/Cylinder-Blank-Length-Calculator/" class="btn btn-primary"
-                            target="_blank">Открыть</a>
+                            target="_blank" rel="noopener">Открыть</a>
                         <a href="https://github.com/volkovhl/Cylinder-Blank-Length-Calculator" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                            target="_blank" rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- Генератор шелчков -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
                 <img src="https://github.com/volkovhl/click-generator/raw/main/click-generator.webp"
-                    alt="Генератор шелчков"
+                    alt="Генератор шелчков" loading="lazy"
                     onerror="this.src='https://placehold.co/600x400/141426/00eaff?text=Click+Generator'">
                 <div class="project-info">
-                    <h2>⚡ Генератор шелчков</h2>
-                    <p>Генератор точных звуковых импульсов (метроном) от 0.1 Гц до 400 Гц (6–24 000 BPM). Визуальный
-                        индикатор, регулировка частоты в реальном времени. Для медитации, экспериментов и настройки
-                        аппаратуры.</p>
+                    <h2 itemprop="name">⚡ Генератор шелчков</h2>
+                    <p itemprop="description">Генератор точных звуковых импульсов (метроном) от 0.1 Гц до 400 Гц (6–24
+                        000 BPM). Визуальный индикатор, регулировка частоты в реальном времени.</p>
                     <div class="card-buttons">
-                        <a href="https://volkovhl.github.io/click-generator/" class="btn btn-primary"
-                            target="_blank">Запустить</a>
-                        <a href="https://github.com/volkovhl/click-generator" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                        <a href="https://volkovhl.github.io/click-generator/" class="btn btn-primary" target="_blank"
+                            rel="noopener">Запустить</a>
+                        <a href="https://github.com/volkovhl/click-generator" class="btn btn-secondary" target="_blank"
+                            rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- Sine-Wave-Generator -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
                 <img src="https://github.com/volkovhl/sine-wave-generator/raw/main/sine-wave-generator.webp?raw=true"
-                    alt="Генератор синусоидального звукового сигнала">
+                    alt="Генератор синусоидального звука" loading="lazy">
                 <div class="project-info">
-                    <h2>🔊 Генератор синусоидального звука</h2>
-                    <p>Создание чистого синусоидального аудиосигнала с настройкой частоты от 1 Гц до 20 кГц.
-                        Плавная регулировка ползунком или точный ввод значения. Генерация и скачивание WAV-файла
-                        с пользовательской длительностью от 1 до 1000 секунд.</p>
+                    <h2 itemprop="name">🔊 Генератор синусоидального звука</h2>
+                    <p itemprop="description">Создание чистого синусоидального аудиосигнала с настройкой частоты от 1 Гц
+                        до 20 кГц. Плавная регулировка, генерация и скачивание WAV-файла.</p>
                     <div class="card-buttons">
                         <a href="https://volkovhl.github.io/sine-wave-generator/" class="btn btn-primary"
-                            target="_blank">Открыть</a>
+                            target="_blank" rel="noopener">Открыть</a>
                         <a href="https://github.com/volkovhl/sine-wave-generator" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                            target="_blank" rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- XY Figure Generator -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
                 <img src="https://github.com/volkovhl/XY-Figure-Generator/raw/main/XY-Figure1.webp"
-                    alt="XY Figure Generator"
+                    alt="XY Figure Generator" loading="lazy"
                     onerror="this.src='https://placehold.co/600x400/141426/00eaff?text=XY+Figure+Generator'">
                 <div class="project-info">
-                    <h2>📈 XY Figure Generator</h2>
-                    <p>Генератор векторных фигур, текста, Лиссажу и 3D-объектов для осциллографа в X/Y-режиме и лазерных
-                        проекторов. Экспорт в стерео WAV (X = Left, Y = Right).</p>
+                    <h2 itemprop="name">📈 XY Figure Generator</h2>
+                    <p itemprop="description">Генератор векторных фигур, текста, Лиссажу и 3D-объектов для осциллографа
+                        в X/Y-режиме и лазерных проекторов. Экспорт в стерео WAV.</p>
                     <div class="card-buttons">
                         <a href="https://volkovhl.github.io/XY-Figure-Generator/" class="btn btn-primary"
-                            target="_blank">Запустить</a>
+                            target="_blank" rel="noopener">Запустить</a>
                         <a href="https://github.com/volkovhl/XY-Figure-Generator" class="btn btn-secondary"
-                            target="_blank">GitHub</a>
+                            target="_blank" rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <footer>
@@ -437,21 +858,233 @@
     </footer>
 
     <script>
-        AOS.init({ duration: 800, once: true });
+        // AOS
+        AOS.init({duration: 800, once: true});
 
+        // ---- Данные для карусели (первые 6 проектов) ----
+        const allProjects = [{
+            title: 'Тетрис HTML',
+            desc: 'Классика с сенсорным drag & drop, динамической скоростью и неоновым дизайном.',
+            img: 'https://github.com/volkovhl/Tetris-html/raw/main/Tetris-PC%20.webp',
+            link: 'https://volkovhl.github.io/Tetris-html/',
+            github: 'https://github.com/volkovhl/Tetris-html'
+        }, {
+            title: 'Rubik\'s Simulator',
+            desc: '3D-кубик Рубика в браузере. Полные алгоритмы CFOP, drag-повороты.',
+            img: 'https://github.com/volkovhl/Rubik-s-Simulator/raw/main/Rubik\'s.webp',
+            link: 'https://volkovhl.github.io/Rubik-s-Simulator/',
+            github: 'https://github.com/volkovhl/Rubik-s-Simulator'
+        }, {
+            title: 'Калькулятор клинка',
+            desc: 'Расчёт углов спусков и подводов, реал-тайм визуализация профиля.',
+            img: 'https://github.com/volkovhl/knife-calculator/raw/main/Knife%20PC.webp',
+            link: 'https://volkovhl.github.io/knife-calculator/',
+            github: 'https://github.com/volkovhl/knife-calculator'
+        }, {
+            title: 'Визуализатор подачи',
+            desc: 'Анимированная линейка для понимания скоростей ЧПУ (мм/сек vs мм/мин).',
+            img: 'https://github.com/volkovhl/Feed-Rate-Visualizer/raw/main/Feed-Rate-Visualizer.webp',
+            link: 'https://volkovhl.github.io/Feed-Rate-Visualizer/',
+            github: 'https://github.com/volkovhl/Feed-Rate-Visualizer'
+        }, {
+            title: 'G-code Generator',
+            desc: 'Мощный генератор G-кода для CNC 3018. Контур, рамка, окно, лазерный режим.',
+            img: 'https://github.com/volkovhl/G-Code-Generator/raw/main/G-code-Generator.webp',
+            link: 'https://volkovhl.github.io/G-Code-Generator/',
+            github: 'https://github.com/volkovhl/G-Code-Generator'
+        }, {
+            title: 'Калькулятор конуса шкива',
+            desc: 'Расчёт угла наклона образующей посадочного конуса шкива с округлением до 2′.',
+            img: 'https://github.com/volkovhl/TaperPulley-Calc/raw/main/TaperPulley-Calc.webp?raw=true',
+            link: 'https://volkovhl.github.io/TaperPulley-Calc/',
+            github: 'https://github.com/volkovhl/TaperPulley-Calc'
+        }, {
+            title: 'Развёртка цилиндра + Литраж',
+            desc: 'Расчёт длины заготовки для гибки цилиндра и объёма (литража) в реальном времени.',
+            img: 'https://github.com/volkovhl/Cylinder-Blank-Length-Calculator/raw/main/Cylinder%20Blank%20Length%20Calculator.webp?raw=true',
+            link: 'https://volkovhl.github.io/Cylinder-Blank-Length-Calculator/',
+            github: 'https://github.com/volkovhl/Cylinder-Blank-Length-Calculator'
+        }, {
+            title: 'Генератор щелчков',
+            desc: 'Точные звуковые импульсы (метроном) от 0.1 Гц до 400 Гц. Визуальный индикатор.',
+            img: 'https://github.com/volkovhl/click-generator/raw/main/click-generator.webp',
+            link: 'https://volkovhl.github.io/click-generator/',
+            github: 'https://github.com/volkovhl/click-generator'
+        }, {
+            title: 'Генератор синусоидального звука',
+            desc: 'Чистый синус от 1 Гц до 20 кГц. Плавная регулировка и скачивание WAV.',
+            img: 'https://github.com/volkovhl/sine-wave-generator/raw/main/sine-wave-generator.webp?raw=true',
+            link: 'https://volkovhl.github.io/sine-wave-generator/',
+            github: 'https://github.com/volkovhl/sine-wave-generator'
+        }, {
+            title: 'XY Figure Generator',
+            desc: 'Векторные фигуры, текст, Лиссажу и 3D для осциллографа X/Y и лазерных проекторов.',
+            img: 'https://github.com/volkovhl/XY-Figure-Generator/raw/main/XY-Figure1.webp',
+            link: 'https://volkovhl.github.io/XY-Figure-Generator/',
+            github: 'https://github.com/volkovhl/XY-Figure-Generator'
+        }];
+
+        // Случайный порядок при каждой загрузке
+        function shuffle(arr) {
+            const a = arr.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        const projectData = shuffle(allProjects);
+
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+
+        function buildCarousel() {
+            track.innerHTML = '';
+            projectData.forEach((p, idx) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.dataset.index = idx;
+
+                const img = document.createElement('img');
+                img.src = p.img;
+                img.alt = p.title;
+                img.loading = 'lazy';
+                img.onerror = function () {
+                    this.src = 'https://placehold.co/600x400/141426/00eaff?text=' + encodeURIComponent(p.title);
+                };
+
+                const content = document.createElement('div');
+                content.className = 'carousel-slide-content';
+                content.innerHTML = `
+                        <h2>${p.title}</h2>
+                        <p>${p.desc}</p>
+                        <div class="btn-group">
+                            <a href="${p.link}" class="carousel-btn primary" target="_blank" rel="noopener">Открыть</a>
+                            <a href="${p.github}" class="carousel-btn secondary" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    `;
+
+                slide.appendChild(img);
+                slide.appendChild(content);
+                track.appendChild(slide);
+            });
+
+            dotsContainer.innerHTML = '';
+            projectData.forEach((_, idx) => {
+                const dot = document.createElement('span');
+                dot.dataset.index = idx;
+                dot.addEventListener('click', () => goToSlide(idx));
+                dotsContainer.appendChild(dot);
+            });
+            updateDots();
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('span');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentSlide);
+            });
+        }
+
+        function goToSlide(index) {
+            const total = projectData.length;
+            if (index < 0) index = total - 1;
+            if (index >= total) index = 0;
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateDots();
+        }
+
+        function nextSlide() {goToSlide(currentSlide + 1);}
+
+        function prevSlide() {goToSlide(currentSlide - 1);}
+
+        let autoSlide = setInterval(nextSlide, 5000);
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        carouselWrapper.addEventListener('mouseleave', () => {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, 5000);
+        });
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            clearInterval(autoSlide);
+            nextSlide();
+            autoSlide = setInterval(nextSlide, 5000);
+        });
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            clearInterval(autoSlide);
+            prevSlide();
+            autoSlide = setInterval(nextSlide, 5000);
+        });
+
+        buildCarousel();
+        goToSlide(0);
+
+        // ---- Поиск (удобный на ПК и смартфоне) ----
         const search = document.getElementById('search');
+        const searchClear = document.getElementById('searchClear');
+        const searchMeta = document.getElementById('searchMeta');
         const cards = document.querySelectorAll('.project-card');
+        const totalProjects = cards.length;
 
-        search.addEventListener('input', e => {
-            const q = e.target.value.toLowerCase().trim();
+        function runSearch() {
+            const q = search.value.toLowerCase().trim();
+            let visible = 0;
+            let firstMatch = null;
+
             cards.forEach(c => {
                 const title = c.querySelector('h2').textContent.toLowerCase();
                 const desc = c.querySelector('p').textContent.toLowerCase();
-                c.style.display = (title.includes(q) || desc.includes(q)) ? '' : 'none';
+                const match = !q || title.includes(q) || desc.includes(q);
+                c.style.display = match ? '' : 'none';
+                if (match) {
+                    visible++;
+                    if (!firstMatch) firstMatch = c;
+                }
             });
+
+            searchClear.classList.toggle('visible', q.length > 0);
+
+            if (!q) {
+                searchMeta.textContent = '';
+            } else if (visible === 0) {
+                searchMeta.innerHTML = 'Ничего не найдено';
+            } else {
+                searchMeta.innerHTML = `Найдено: <strong>${visible}</strong> из ${totalProjects}`;
+            }
+
+            return firstMatch;
+        }
+
+        search.addEventListener('input', runSearch);
+
+        search.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const firstMatch = runSearch();
+                if (firstMatch) {
+                    firstMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    firstMatch.style.transition = 'box-shadow 0.3s';
+                    firstMatch.style.boxShadow = '0 0 0 3px var(--accent)';
+                    setTimeout(() => {firstMatch.style.boxShadow = '';}, 1800);
+                }
+            }
+            if (e.key === 'Escape') {
+                search.value = '';
+                runSearch();
+                search.blur();
+            }
+        });
+
+        searchClear.addEventListener('click', () => {
+            search.value = '';
+            runSearch();
+            search.focus();
         });
     </script>
-
 </body>
 
 </html>
