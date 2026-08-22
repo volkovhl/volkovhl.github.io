@@ -79,7 +79,8 @@
                     { "@type": "ListItem", "position": 7, "name": "Развёртка цилиндра + Литраж" },
                     { "@type": "ListItem", "position": 8, "name": "Генератор шелчков" },
                     { "@type": "ListItem", "position": 9, "name": "Генератор синусоидального звука" },
-                    { "@type": "ListItem", "position": 10, "name": "XY Figure Generator" }
+                    { "@type": "ListItem", "position": 10, "name": "XY Figure Generator" },
+                    { "@type": "ListItem", "position": 11, "name": "Стробоскоп (диагностика)" }
                 ]
             }
         }
@@ -850,6 +851,24 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Стробоскоп (диагностика) -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/SoftwareApplication">
+                <img src="https://github.com/volkovhl/strobe-diag/raw/main/strobe-diag.webp"
+                    alt="Стробоскоп (диагностика)" loading="lazy"
+                    onerror="this.src='https://placehold.co/600x400/141426/00eaff?text=Strobe+Diag'">
+                <div class="project-info">
+                    <h2 itemprop="name">🔦 Стробоскоп (диагностика)</h2>
+                    <p itemprop="description">Диагностический стробоскоп для проверки работы электроники, двигателей и механизмов. Настройка частоты, яркости и задержки.</p>
+                    <div class="card-buttons">
+                        <a href="https://volkovhl.github.io/strobe-diag/" class="btn btn-primary" target="_blank"
+                            rel="noopener">Запустить</a>
+                        <a href="https://github.com/volkovhl/strobe-diag" class="btn btn-secondary" target="_blank"
+                            rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -861,7 +880,7 @@
         // AOS
         AOS.init({duration: 800, once: true});
 
-        // ---- Данные для карусели (первые 6 проектов) ----
+        // ---- Данные для карусели (первые 11 проектов) ----
         const allProjects = [{
             title: 'Тетрис HTML',
             desc: 'Классика с сенсорным drag & drop, динамической скоростью и неоновым дизайном.',
@@ -922,6 +941,12 @@
             img: 'https://github.com/volkovhl/XY-Figure-Generator/raw/main/XY-Figure1.webp',
             link: 'https://volkovhl.github.io/XY-Figure-Generator/',
             github: 'https://github.com/volkovhl/XY-Figure-Generator'
+        }, {
+            title: 'Стробоскоп (диагностика)',
+            desc: 'Диагностический стробоскоп для проверки работы электроники, двигателей и механизмов.',
+            img: 'https://github.com/volkovhl/strobe-diag/raw/main/strobe-diag.webp',
+            link: 'https://volkovhl.github.io/strobe-diag/',
+            github: 'https://github.com/volkovhl/strobe-diag'
         }];
 
         // Случайный порядок при каждой загрузке
